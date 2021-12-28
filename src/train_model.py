@@ -29,5 +29,7 @@ model.compile(
     metrics=['accuracy']#Accuracy Metric (Was wollen wir haben)
 )
 
+#model traenieren (Trainiert das Modell für eine feste Anzahl von Epochen (Iterationen auf einem Datensatz)).
+model.fit(x_train, y_train, epochs=10)
 
 
