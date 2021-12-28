@@ -1,4 +1,5 @@
 import cv2 as opencv
+import matplotlib.pyplot as plt
 import numpy as np
 
 import tensorflow.keras as keras
@@ -13,4 +14,6 @@ def image_to_array(image_name):
     return img_to_array_invert
 
 
-
+def show_image(image_array):
+    plt.imshow(image_array[0], cmap=plt.cm.binary)
+    plt.show()
