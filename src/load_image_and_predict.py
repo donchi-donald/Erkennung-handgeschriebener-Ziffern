@@ -25,8 +25,10 @@ while True:
     image_name = '../img/ziffer{}.png'.format(i)
     isImg = os.path.isfile(image_name)
     if isImg:
-        img = image_to_array(image_name)
-        show_image(img)
+        imgToArray = image_to_array(image_name)
+        prediction = model.predict(imgToArray)
+        print("Die Zahl ist wahrscheinlich eine {}".format(np.argmax(prediction)))
+        show_image(imgToArray)
         i += 1
     else:
         break
