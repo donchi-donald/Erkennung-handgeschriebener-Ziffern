@@ -14,7 +14,6 @@ layers = keras.layers
 x_train = x_train / 255.
 x_test = x_test / 255.
 assert x_train.shape == (60000, 28, 28) and x_test.shape == (10000, 28, 28) and y_train.shape == (60000,) and y_test.shape == (10000,)
-
 #model erzeugen
 model = keras.models.Sequential() #sequentielle model erzeugen
 model.add(layers.Flatten(input_shape=(28,28))) #Eingabeschicht für die Pixel hinzufuegen (inputlayers)
@@ -31,5 +30,8 @@ model.compile(
 
 #model traenieren (Trainiert das Modell für eine feste Anzahl von Epochen (Iterationen auf einem Datensatz)).
 model.fit(x_train, y_train, epochs=10)
+
+#model evalurieren (Verlustwert und die Metrikwerte für das Modell)
+loss_val, metric_val = model.evaluate(x_test, y_test)
 
 
