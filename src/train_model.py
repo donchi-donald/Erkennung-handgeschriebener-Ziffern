@@ -22,5 +22,12 @@ model.add(layers.Dense(128, activation=tf.nn.relu))  #hidden layers mit 128 Neur
 model.add(layers.Dense(256, activation=tf.nn.relu)) #hidden layers mit 256 Neuronen hinzufuegen
 model.add(layers.Dense(10, activation=tf.nn.softmax)) #ausgabeschicht mit 10 Neuronen für die 10 Ziffern  hinzufuegen
 
+#model kompilieren und optimieren
+model.compile(
+    optimizer='adam',
+    loss='sparse_categorical_crossentropy',#Loss/Fehler-Funktion
+    metrics=['accuracy']#Accuracy Metric (Was wollen wir haben)
+)
+
 
 
