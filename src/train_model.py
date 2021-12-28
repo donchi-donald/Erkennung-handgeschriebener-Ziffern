@@ -29,9 +29,15 @@ model.compile(
 )
 
 #model traenieren (Trainiert das Modell für eine feste Anzahl von Epochen (Iterationen auf einem Datensatz)).
-model.fit(x_train, y_train, epochs=10)
+model.fit(x_train, y_train, epochs=1)
 
-#model evalurieren (Verlustwert und die Metrikwerte für das Modell)
+#model evalurieren (Verlustwert und die Genauigkeitwerte für das Modell)
 loss_val, metric_val = model.evaluate(x_test, y_test)
+print(loss_val)
+print(metric_val)
+
+#model speichern
+#Saves the model to Tensorflow SavedModel or a single HDF5 file.
+model.save('../model/ziffer_model.h5')
 
 
